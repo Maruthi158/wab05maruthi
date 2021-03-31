@@ -22,7 +22,14 @@ block content
                         "compartment_type": "Sleeper"
                     },                    
                 ]
-            each list in compartment
-                div(class="col-sm-2") #{list.compartment_name}
-                div(class="col-sm-2") #{list.compartment_ID}
-                div(class="col-sm-2") #{list.compartment_type}
+            each list,index in compartment
+                div(class="col-sm-2" onclick=`buy(${index})`) #{list.compartment_name}
+                div(class="col-sm-2" onclick=`buy(${index})`) #{list.compartment_ID}
+                div(class="col-sm-2" onclick=`buy(${index})`) #{list.compartment_type}
+
+        script.
+     
+         function buy(itemNo)
+         {
+         alert(`You purchased Item ${itemNo+1}`)
+         }
